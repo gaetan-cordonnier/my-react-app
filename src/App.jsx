@@ -5,14 +5,6 @@ import { useState } from "react";
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handleClickNext = () => {
-    setPokemonIndex(pokemonIndex - 1 )
-  }
-
-  const handleClickBack = () => {
-    setPokemonIndex(pokemonIndex + 1)
-  }
-
   const pokemonList = [
     {
         name: "bulbasaur",
@@ -44,10 +36,10 @@ function App() {
         <PokemonCard pokemonList={pokemonList[pokemonIndex]} />
         <div className={style.buttonContainer}>
           <div className={style.button}>  
-            {pokemonIndex > 0 ? <button type="button" onClick={handleClickNext} className={style.button}>Précédent</button> : null}
+            {pokemonIndex > 0 ? <button type="button" onClick={() => setPokemonIndex(pokemonIndex -1)} className={style.button}>Précédent</button> : null}
           </div>
           <div className={style.button}>
-            {pokemonIndex < pokemonList.length - 1  ? <button type="button" onClick={handleClickBack} className={style.button}>Suivant</button> : null}
+            {pokemonIndex < pokemonList.length - 1  ? <button type="button" onClick={() => setPokemonIndex(pokemonIndex +1)} className={style.button}>Suivant</button> : null}
           </div>
         </div>
       </div>
