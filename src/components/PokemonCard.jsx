@@ -15,7 +15,7 @@ function PokemonCard(props) {
     return (
         <figure className={style.container}>
             {imgSrc ? <img src={imgSrc} alt={name} className={style.img}/> : <div  className={style.emptyImg}><p className={style.text}>???</p></div>}
-            <figcaption className={style.text}>{name} </figcaption>
+            <figcaption className={style.text}>{name}</figcaption>
         </figure> 
     );
   }

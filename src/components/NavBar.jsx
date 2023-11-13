@@ -8,11 +8,15 @@ function NavBar({ displayPokemon, pokemonList}) {
         pokemonList: PropTypes.array.isRequired
     };
 
+    function openPikachuAlert(pokemon) {
+        pokemon == "pikachu" ? alert("Pika Pikachu !!!") : false;
+    }
+
     return(
         <div className={style.buttonContainer}>
             {
                 pokemonList.map((pokemon, index) => (
-                    <button key={pokemon.name} onClick={() => {displayPokemon(index)}} className={style.button}>{pokemon.name}</button>))
+                <button key={pokemon.name} onClick={() => {displayPokemon(index), openPikachuAlert(pokemon.name)}} className={style.button}>{pokemon.name}</button>))
             }
         </div>
     );

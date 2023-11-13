@@ -1,10 +1,15 @@
 import style from "./App.module.css"
 import NavBar from "./components/NavBar";
 import PokemonCard from './components/PokemonCard'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   let [pokemonIndex, setPokemonIndex] = useState(0);
+
+
+  useEffect(()=>{
+    alert("Hello pokemon trainer :)");
+  },[]);
 
   function displayPokemon(index) {
     setPokemonIndex(index)
