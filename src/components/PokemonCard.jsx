@@ -1,4 +1,14 @@
+import PropTypes from "prop-types";
+
 function PokemonCard(props) {
+
+    PokemonCard.propTypes = {
+        pokemonList: PropTypes.shape({
+          imgSrc: PropTypes.string,
+          name: PropTypes.string.isRequired,
+        })
+    };
+
 
     return (
         props.pokemonList.map((element, index) => {
