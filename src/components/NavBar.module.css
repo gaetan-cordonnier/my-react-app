@@ -1,9 +1,13 @@
 .buttonContainer {
-    width: 400px;
+    width: 650px;
+    max-width: 650px;
     display: flex;
-    justify-content:space-around;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin-top: 1em;
   }
   
   .button {
     width: 120px;
+    text-transform: capitalize;
   }
