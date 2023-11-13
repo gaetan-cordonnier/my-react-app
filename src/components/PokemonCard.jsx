@@ -1,3 +1,4 @@
+import style from "./PokemonCard.module.css";
 import PropTypes from "prop-types";
 
 function PokemonCard(props) {
@@ -6,18 +7,16 @@ function PokemonCard(props) {
         pokemonList: PropTypes.shape({
           imgSrc: PropTypes.string,
           name: PropTypes.string.isRequired,
-        })
+        }),
     };
 
+    const {imgSrc, name} = props.pokemonList;
 
     return (
-        props.pokemonList.map((element, index) => {
-            return (
-            <figure key={index}>
-            {element.imgSrc ? <img src={element.imgSrc} alt={element.name}/> : <p>???</p>}
-            <figcaption style={{'textTransform': 'capitalize'}}>{element.name} </figcaption>
-        </figure> )
-        })
+        <figure className={style.container}>
+            {imgSrc ? <img src={imgSrc} alt={name} className={style.img}/> : <div  className={style.emptyImg}><p className={style.text}>???</p></div>}
+            <figcaption className={style.text}>{name} </figcaption>
+        </figure> 
     );
   }
   
